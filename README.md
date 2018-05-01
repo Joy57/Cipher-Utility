@@ -46,7 +46,7 @@ Usage: ./cipher -[e|d] [-nosalt] -in infile -out outfile -p password
 ```
 By defualt the progam is set to `salt` for security purpose. It is recommended to use `salt` for any type of encryption/decryption especially with a stream cipher. 
 
-Example usage are shown below:
+Example usage:
 -----------------------------
 **Encryption using salt** 
 ![salt encryption][usage1]
