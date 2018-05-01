@@ -23,7 +23,7 @@ For Ubuntu:
     $ sudo apt-get update && apt-get install -y vim openssl libssl-dev
     
     
-For Mac using Homebrew:
+For Mac using [Homebrew](https://brew.sh/):
 
     $ brew update
     $ brew install openssl
