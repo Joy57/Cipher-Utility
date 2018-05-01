@@ -25,11 +25,15 @@ For Ubuntu:
     
 For Mac using Homebrew:
 
-    
     brew update
     brew install openssl
     
+If you get `error: 'openssl/evp.h' file not found` then you might need to do the following:
 
+    ```
+    $ cd /usr/local/include 
+    $ ln -s ../opt/openssl/include/openssl .
+    ```
 
 **Note** if you have a version above `1.0.2o`. If you choose to encrypt/decrypt with `cipher-utility` program and then encrypt/decrypt using built-in openssl command, you will need to pass the `-md md5` flag. Because the latest version uses `sha1` as a message digest by default.
 
