@@ -10,7 +10,7 @@ Prerequisites
 
 Check to see if you already have `openssl` on your machine.
 ```
-    openssl version
+$ openssl version
 ```
 
 If you already have openssl installed on your system. Please check the version by typing `openssl version`. This program will work with any version of openssl. 
