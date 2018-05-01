@@ -48,10 +48,10 @@ By defualt the progam is set to `salt` for security purpose. It is recommended t
 
 Example usage are shown below:
 -----------------------------
-*Encryption using salt 
+**Encryption using salt** 
 ![salt encryption][usage1]
 
-*Decryption using salt
+**Decryption using salt**
 ![salt decryption][usage2]
 
 if you would like to make sure your file wasn't corruption or changed due to encryption/decryption. Type the following command
