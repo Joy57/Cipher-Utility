@@ -40,6 +40,12 @@ If you get `error: 'openssl/evp.h' file not found` then you might need to do the
 How to run the program
 ----------------------
 
+First, clone this repo:
+
+```
+    $ git clone https://github.com/Joy57/Cipher-Utility.git
+```
+
 1. Run the `make` command. 
 2. Run executable file `./cipher`.
 
