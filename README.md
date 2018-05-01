@@ -64,7 +64,7 @@ if you would like to make sure your file wasn't corruption or changed due to enc
 
 sample.jpg is your original file and dec.jpg is your decrypted file.
 ```
-    diff sample.jpg dec.jpg
+$ diff sample.jpg dec.jpg
 ```
 Output should be nothing in the case of successful encryption/decryption.
 
@@ -72,11 +72,11 @@ If you want to encrypt/decrypt using `-nosalt`. Then type the following:
 
 **Encrypt**
 ```
-    ./cipher -e -in sample.jpg -out enc.jpg -p iLoveMagic
+$ ./cipher -e -in sample.jpg -out enc.jpg -p iLoveMagic
 ```
 **Decrypt**
 ```
-./cipher -d -in enc.jpg -out dec.jpg -p iLoveMagic
+$ ./cipher -d -in enc.jpg -out dec.jpg -p iLoveMagic
 ```
 
 Incase you forget to pass the -p flag for password. You will be prompted to enter password.
