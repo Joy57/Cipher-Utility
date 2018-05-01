@@ -86,6 +86,8 @@ Incase you forget to pass the -p flag for password. You will be prompted to ente
 [usage2]: images/usage2.png
 [usage3]: images/usage3.png
 
+License
+-------
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
