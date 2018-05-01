@@ -18,10 +18,13 @@ If you already have openssl installed on your system. Please check the version b
 If not, install using the direction from openssl's site or follow the direction below:
 
 For Ubuntu:
+
     ```
     $ sudo apt-get update && apt-get install -y vim openssl libssl-dev
     ```
+    
 For Mac using Homebrew:
+
     ```
     brew update
     brew install openssl
