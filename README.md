@@ -1,4 +1,4 @@
-This is a stand-alone cipher-utility that uses openssl crypto-library to encrypt/decrypt any file.
+This is a stand-alone cipher-utility that uses openssl crypto-library RC4 to encrypt/decrypt any file.
 
 
 Prerequisites
