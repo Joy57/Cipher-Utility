@@ -34,7 +34,7 @@ If you get `error: 'openssl/evp.h' file not found` then you might need to do the
     $ ln -s ../opt/openssl/include/openssl .
     
 
-**Note** if you have a version above `1.0.2o`. If you choose to encrypt/decrypt with `cipher-utility` program and then encrypt/decrypt using built-in openssl command, you will need to pass the `-md md5` flag. Because the latest version uses `sha1` as a message digest by default.
+**Note:** If you have a version above `1.0.2o`. And you want to encrypt/decrypt with `cipher-utility` program and then encrypt/decrypt using built-in openssl command, you will need to pass the `-md md5` flag. Because the latest version uses `sha1` as a message digest by default.
 
 
 How to run the program
@@ -49,7 +49,7 @@ First, clone this repo:
 1. Run the `make` command. 
 2. Run executable file `./cipher`.
 
-If you modify or make changes to the code please make sure to run `make clean` and then follow the above step to run the program again.
+**Note:** If you modify or make changes to the code please make sure to run `make clean` and then follow the above step to run the program again.
 
 When you run the executable `cipher`, it will provide the following direction for usage.
 
