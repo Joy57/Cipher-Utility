@@ -62,13 +62,13 @@ sample.jpg is your original file and dec.jpg is your decrypted file.
 ```
 Output should be nothing in the case of successful encryption/decryption.
 
-If you want to encrypt/decrypt using -nosalt. Then type the following:
+If you want to encrypt/decrypt using `-nosalt`. Then type the following:
 
-Encrypt
+**Encrypt**
 ```
     ./cipher -e -in sample.jpg -out enc.jpg -p iLoveMagic
 ```
-Decrypt
+**Decrypt**
 ```
 ./cipher -d -in enc.jpg -out dec.jpg -p iLoveMagic
 ```
