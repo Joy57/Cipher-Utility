@@ -25,8 +25,8 @@ For Ubuntu:
     
 For Mac using Homebrew:
 
-    brew update
-    brew install openssl
+    $ brew update
+    $ brew install openssl
     
 If you get `error: 'openssl/evp.h' file not found` then you might need to do the following:
 
