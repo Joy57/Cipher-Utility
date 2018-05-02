@@ -66,7 +66,7 @@ Example usage:
 **Decryption using salt**
 ![salt decryption][usage2]
 
-if you would like to make sure your file wasn't corruption or changed due to encryption/decryption. Type the following command
+if you would like to make sure your file wasn't corrupted or changed due to encryption/decryption. Type the following command
 
 sample.jpg is your original file and dec.jpg is your decrypted file.
 ```
