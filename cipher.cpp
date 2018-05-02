@@ -11,6 +11,8 @@ using namespace std;
 
 #define BUFF_SIZE (1024*1024)
 #define SALT_SIZE 8
+#define AES_256_KEY_SIZE 32
+#define AES_256_BLOCK_SIZE 16
 
 void print_usage();
 void loadingBar();
@@ -137,11 +139,11 @@ void the_magician (int fd, int fd2, string password, int salt_set, int enc)
     loadingBar();
 
     //Setting up the cipher type
-    const EVP_CIPHER * cipher = EVP_rc4();
+    const EVP_CIPHER * cipher = EVP_aes_256_cbc();
     //digest to use later
-    const EVP_MD * dgst = EVP_md5();
+    const EVP_MD * dgst = EVP_sha1();
 
-    unsigned char key[EVP_MAX_KEY_LENGTH], iv[EVP_MAX_IV_LENGTH];
+    unsigned char key[AES_256_KEY_SIZE], iv[AES_256_BLOCK_SIZE];
 
     //taking care of password
     char newPass [password.length()]; 
@@ -158,7 +160,7 @@ void the_magician (int fd, int fd2, string password, int salt_set, int enc)
     EVP_CIPHER_CTX_init(&ctx);
 
     //set key and IV and other params
-    EVP_CipherInit_ex(&ctx, EVP_rc4(), NULL, key, iv, enc);
+    EVP_CipherInit_ex(&ctx, cipher, NULL, key, iv, enc);
 
     unsigned char buf_in[BUFF_SIZE], buf_out[BUFF_SIZE + EVP_MAX_BLOCK_LENGTH];
     
@@ -193,7 +195,7 @@ void the_magician (int fd, int fd2, string password, int salt_set, int enc)
 }
 
 void print_usage(){
-    printf("Usage: ./rc4 -[e|d] [-nosalt] -in infile -out outfile -p password\n");
+    printf("Usage: ./cipher -[e|d] [-nosalt] -in infile -out outfile -p password\n");
 }
 void loadingBar(){
     cout << endl;
