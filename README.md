@@ -1,4 +1,4 @@
-This is a stand-alone cipher-utility that uses openssl crypto-library to encrypt/decrypt any file.
+This is a stand-alone cipher-utility that uses openssl crypto-library RC4 to encrypt/decrypt any file.
 
 
 Prerequisites
@@ -10,7 +10,7 @@ Prerequisites
 
 Check to see if you already have `openssl` on your machine.
 ```
-    openssl version
+$ openssl version
 ```
 
 If you already have openssl installed on your system. Please check the version by typing `openssl version`. This program will work with any version of openssl. 
@@ -23,24 +23,33 @@ For Ubuntu:
     $ sudo apt-get update && apt-get install -y vim openssl libssl-dev
     
     
-For Mac using Homebrew:
+For Mac using [Homebrew](https://brew.sh/):
 
+    $ brew update
+    $ brew install openssl
     
-    brew update
-    brew install openssl
+If you get `error: 'openssl/evp.h' file not found` then you might need to do the following:
+
+    $ cd /usr/local/include 
+    $ ln -s ../opt/openssl/include/openssl .
     
 
-
-**Note** if you have a version above `1.0.2o`. If you choose to encrypt/decrypt with `cipher-utility` program and then encrypt/decrypt using built-in openssl command, you will need to pass the `-md md5` flag. Because the latest version uses `sha1` as a message digest by default.
+**Note:** If you have a version above `1.0.2o`. And you want to encrypt/decrypt with `cipher-utility` program and then encrypt/decrypt using built-in openssl command, you will need to pass the `-md md5` flag. Because the latest version uses `sha1` as a message digest by default.
 
 
 How to run the program
 ----------------------
 
+First, clone this repo:
+
+```
+    $ git clone https://github.com/Joy57/Cipher-Utility.git
+```
+
 1. Run the `make` command. 
 2. Run executable file `./cipher`.
 
-If you modify or make changes to the code please make sure to run `make clean` and then follow the above step to run the program again.
+**Note:** If you modify or make changes to the code please make sure to run `make clean` and then follow the above step to run the program again.
 
 When you run the executable `cipher`, it will provide the following direction for usage.
 
@@ -57,11 +66,11 @@ Example usage:
 **Decryption using salt**
 ![salt decryption][usage2]
 
-if you would like to make sure your file wasn't corruption or changed due to encryption/decryption. Type the following command
+if you would like to make sure your file wasn't corrupted or changed due to encryption/decryption. Type the following command
 
 sample.jpg is your original file and dec.jpg is your decrypted file.
 ```
-    diff sample.jpg dec.jpg
+$ diff sample.jpg dec.jpg
 ```
 Output should be nothing in the case of successful encryption/decryption.
 
@@ -69,11 +78,11 @@ If you want to encrypt/decrypt using `-nosalt`. Then type the following:
 
 **Encrypt**
 ```
-    ./cipher -e -in sample.jpg -out enc.jpg -p iLoveMagic
+$ ./cipher -e -in sample.jpg -out enc.jpg -p iLoveMagic
 ```
 **Decrypt**
 ```
-./cipher -d -in enc.jpg -out dec.jpg -p iLoveMagic
+$ ./cipher -d -in enc.jpg -out dec.jpg -p iLoveMagic
 ```
 
 Incase you forget to pass the -p flag for password. You will be prompted to enter password.
